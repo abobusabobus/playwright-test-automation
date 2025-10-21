@@ -70,7 +70,6 @@ GitHub: abobusabobus
 Логин: LyakishEg
 
 Быстрый старт (TL;DR)
-bash
 git clone https://github.com/abobusabobus/playwright-test-automation.git
 cd playwright-test-automation
 python -m venv venv
