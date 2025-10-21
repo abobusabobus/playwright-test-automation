@@ -1,0 +1,1 @@
+[{"uid":"f9b9b91e38c96c69","name":"Проверка загрузки главной страницы","time":{"start":1761061665715,"stop":1761061667628,"duration":1913},"status":"passed","severity":"blocker"},{"uid":"650bb478c61714a6","name":"Проверка перехода по всем блокам навигации","time":{"start":1761061660045,"stop":1761061665499,"duration":5454},"status":"passed","severity":"critical"}]

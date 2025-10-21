@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  playwright-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: playwright-test-runner
+    volumes:
+      - ./tests:/app/tests
+      - ./pages:/app/pages
+      - ./allure-results:/app/allure-results
+      - ./allure-report:/app/allure-report
+      - ./videos:/app/videos
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTEST_ADDOPTS=--color=yes
+    command: >
+      sh -c "pytest -v 
+      --browser chromium 
+      --headless
+      --alluredir=allure-results 
+      tests/"
+    network_mode: bridge
+    
+  allure-report:
+    image: frankescobar/allure-docker-service:latest
+    container_name: allure-report-service
+    ports:
+      - "5050:5050"
+    environment:
+      - CHECK_RESULTS_EVERY_SECONDS=3
+      - KEEP_HISTORY=1
+    volumes:
+      - ./allure-results:/app/allure-results
+      - ./allure-report:/app/default-reports

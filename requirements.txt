@@ -1,0 +1,5 @@
+﻿playwright==1.45.0
+pytest==8.2.0
+pytest-playwright==0.5.0
+allure-pytest==2.13.5
+pytest-xdist==3.6.1
