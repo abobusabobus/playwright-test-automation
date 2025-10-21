@@ -1,28 +1,25 @@
-<<<<<<< HEAD
-# playwright-test-automation
-=======
-Проект: playwright-test-automation
+playwright-test-automation
 Автоматизация UI тестирования главной страницы effective-mobile.ru
-Описание
-Автоматизированные UI тесты на Python + Playwright для проверки главных разделов сайта effective-mobile.ru. В проекте реализован паттерн Page Object, интеграция с Allure для генерации отчетов, поддерживается запуск в Docker.
+Описание проекта
+Автоматизированные UI тесты написаны с использованием Python + Playwright. Применён паттерн Page Object для улучшенной поддержки тестов. Для отчетов используется Allure.
 
-Структура проекта
-tests/ — тесты (например, test_homepage.py)
+Структура
+tests/ — тестовые сценарии
 
-pages/ — Page Object классы (homepage.py, base_page.py)
+pages/ — Page Object классы
 
 requirements.txt — зависимости Python
 
-Dockerfile — инструкция сборки окружения
+Dockerfile — сборочный скрипт окружения
 
-docker-compose.yml — быстрый запуск тестов и Allure через Docker
+docker-compose.yml — запуск тестов и отчетов в контейнерах
 
-pytest.ini — (если есть) настройки pytest
+pytest.ini — конфигурация pytest (если есть)
 
-README.md — эта инструкция
+README.md — этот файл
 
 Требования
-Python 3.10+
+Python 3.10 и выше
 
 Playwright
 
@@ -30,45 +27,42 @@ Allure (для отчетов)
 
 Docker (опционально)
 
-Установка и запуск локально
-Клонируйте проект:
+Установка локально
 
 git clone https://github.com/abobusabobus/playwright-test-automation.git
 cd playwright-test-automation
-Cоздайте виртуальное окружение и активируйте:
 
 python -m venv venv
-.\venv\Scripts\activate         # Windows
-source venv/bin/activate        # Linux/Mac
-Установите зависимости:
+.\venv\Scripts\activate       # Windows
+source venv/bin/activate      # Linux/Mac
 
 pip install -r requirements.txt
 playwright install
-Запустите тесты и соберите Allure-отчёт:
+Запуск тестов
 
 pytest -v --alluredir=allure-results
 allure serve allure-results
-Запуск с помощью Docker
-Соберите контейнер:
+Запуск через Docker
 
 docker-compose build
-Запустите тесты:
-
 docker-compose up playwright-tests
-Для отчета Allure:
-
 docker-compose up allure-report
-Откройте http://localhost:5050
+Отчёты доступны по адресу http://localhost:5050
 
 Что тестируется
-Проверка переходов по главным навигационным разделам (“О нас”, “Услуги”, “Контакты”)
+Навигация по разделам сайта
 
-Проверка видимости и доступности основных элементов страницы
+Проверка видимости основных элементов
 
-Поддержка отчётов Allure с шагами и скриншотами
+Генерация отчетов Allure с графической информацией
 
-Автор
-GitHub: abobusabobus
+Исключения из репозитория
+Папка venv/ для виртуального окружения не добавлена — добавлен .gitignore
+
+Все зависимости описаны в requirements.txt
+
+Автор и контакты
+GitHub: https://github.com/abobusabobus
 
 Логин: LyakishEg
 
@@ -81,4 +75,3 @@ pip install -r requirements.txt
 playwright install
 pytest -v --alluredir=allure-results
 allure serve allure-results
->>>>>>> feadcc1ed409551b5a5cd9b5f3cd2bbe36b99777
